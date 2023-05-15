@@ -1,29 +1,19 @@
-const { UserModule } = require('../module/userModule')
+const {UserModule} = require('../module/userModule')
 
-async function registration(req, res, next) {
-    let user = {
-        username: req.body.username,
-        password: req.body.password,
-        name: req.body.name,
-        surname: req.body.surname,
-        role: 'USER'
+class UserService {
+    static async getUserByUsername (username) {
+        return await UserModule.findOne({
+            username: username
+        })
     }
 
-    let dbUser = await UserModule.findOne({
-        username: user.username
-    })
-
-    if (dbUser) {
-        res
-            .status(400)
-            .send("User with the same username already exists")
-        return
+    static async saveUser(user) {
+        return UserModule.create(user);
     }
 
-    let savedUser = await UserModule.create(user)
-    res
-        .status(201)
-        .send(savedUser)
+    static async getUserById(id) {
+        return UserModule.findByPk(id);
+    }
 }
 
-module.exports = { registration }
+module.exports = { UserService }
