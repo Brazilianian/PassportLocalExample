@@ -1,6 +1,6 @@
 const passport = require("passport");
 const bcrypt = require('bcrypt')
-const { UserService } = require('../service/userService')
+const {UserService} = require('../service/userService')
 
 class AuthController {
     static async registration(req, res, next) {
@@ -50,12 +50,20 @@ class AuthController {
     }
 
     static async logout(req, res, next) {
-        req.logout()
-        req.session.destroy()
+        req.session.destroy((err) => {
+            if (err) {
+                res
+                    .status(400)
+                    .send("Failed to logout")
+                return
+            }
+            res
+                .status(200)
+                .clearCookie('connect.sid')
+                .send("Successfully logged out")
+        })
 
-        res
-            .status(200)
-            .send("Successfully logged out")
+
     }
 }
 
