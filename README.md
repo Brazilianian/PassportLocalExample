@@ -8,7 +8,9 @@ Simple example of implemetation passport-local session cookies baset strategy of
 
 ```bash
 $ nodemon app.js
+```
 or
+```bash
 $ node app.js
 ```
 
