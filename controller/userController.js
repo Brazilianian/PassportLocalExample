@@ -1,4 +1,4 @@
-class MainController {
+class UserController {
     static getUser(req, res, next) {
         let user = req.user
 
@@ -15,4 +15,4 @@ class MainController {
     }
 }
 
-module.exports = { MainController }
+module.exports = { UserController }

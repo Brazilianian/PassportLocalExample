@@ -17,8 +17,8 @@ sequelize.sync()
     .then(() => {
         console.log("Synced")
     })
-    .catch(() => {
-        console.log("Failed to sync")
+    .catch((error) => {
+        console.log("Failed to sync: ", error)
     })
 
 module.exports = { sequelize }

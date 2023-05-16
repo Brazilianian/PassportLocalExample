@@ -12,7 +12,7 @@ require('./config/dbConfig')
 require('./module/index')
 
 const { authRouter } = require('./router/authRouter')
-const {mainRouter} = require("./router/mainRouter");
+const {userRouter} = require("./router/userRouter");
 
 const app = express()
 
@@ -33,7 +33,7 @@ app.use(passport.session({}))
 require('./config/passportConfig')(passport)
 
 app.use('/api/v1/auth', authRouter)
-app.use('/api/v1/main', mainRouter)
+app.use('/api/v1/user', userRouter)
 
 app.listen(port, () => {
     console.log(`Application started on port ${port}`)
