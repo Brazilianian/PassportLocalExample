@@ -52,9 +52,9 @@ Project Name
 ├───controller
 │   ├───authController.js
 │   ├───userController.js
-├───module
+├───model
 │   ├───index.js
-│   ├───userModule.js
+│   ├───userModel.js
 ├───router
 │   ├───authRouter.js
 │   ├───userRouter.js
