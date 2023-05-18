@@ -19,4 +19,4 @@ const UserModel = sequelize.define("user", {
     },
 })
 
-module.exports = { UserModule: UserModel }
+module.exports = { UserModel }

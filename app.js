@@ -9,7 +9,7 @@ const dotenv = require('dotenv')
 dotenv.config({path: './.env'})
 
 require('./config/dbConfig')
-require('./module/index')
+require('./model')
 
 const { authRouter } = require('./router/authRouter')
 const {userRouter} = require("./router/userRouter");

@@ -1,4 +1,4 @@
-const {UserModule} = require('../module/userModule')
+const {UserModule} = require('../model/userModel')
 
 class UserService {
     static async getUserByUsername (username) {
